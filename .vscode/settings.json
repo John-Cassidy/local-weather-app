@@ -25,7 +25,7 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "workbench.iconTheme": "material-icon-theme",
   "auto-close-tag.SublimeText3Mode": true,
-  "html.autoClosingTags": false,
+  "html.autoClosingTags": true,
   "peacock.affectActivityBar": true,
   "peacock.affectStatusBar": true,
   "peacock.affectTitleBar": false,
