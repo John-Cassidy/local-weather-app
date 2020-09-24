@@ -134,9 +134,18 @@ npx mrm npm-docker
 
 ## Commands
 
+Create project
 npx @angular/cli new local-weather-app
 
 Run the following commands before committing your code to ensure styles and linting properly applied to the project:
 
 npm run style:fix - automatically format code files as per styling rules
 npm run lint:fix - automatically fix auto-fixable linting errors
+
+## Commands run during development
+
+npx ng generate component current-weather
+...or... ng g c current-weather
+...prepend npx if necessary...
+
+npx ng g i ICurrentWeather interface
