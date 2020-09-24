@@ -149,3 +149,5 @@ npx ng generate component current-weather
 ...prepend npx if necessary...
 
 npx ng g i ICurrentWeather interface
+
+npx ng g s weather --flat false
