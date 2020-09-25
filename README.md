@@ -132,6 +132,47 @@ npm i -g mrm-task-npm-docker
 Apply the npm Scripts for the Docker configuration to your project
 npx mrm npm-docker
 
+## Setup DOTENV to access Envvironment Variables
+
+Keep sensitive environment data out of source control
+https://medium.com/javascript-in-plain-english/setup-dotenv-to-access-environment-variables-in-angular-9-f06c6ffb86c0
+
+(1a) install 2 packages:
+npm install --save-dev yargs dotenv
+
+- dotenv
+- yargs
+
+  (1) add environment variables you want to use in development in this file: process.env
+  (2) DO NOT check in process.env into source control
+  (3) run this command to generate .env file:
+  npm run init:env
+  (4) create scripts/setenv.ts file and copy code from article to generate environment.ts file used by ng during debugging
+  (5) modify our start and build scripts so that these files are generated dynamically.
+  Do this in the package.json file:
+  {
+  ...
+  "scripts": {
+  "init:env": "init-dev-env generate-dot-env process.env -f",
+  "config": "ts-node ./scripts/setenv.ts",
+  "start": "npm run config -- --environment=dev && ng serve -c=dev --port 5000",
+  "build": "ng build",
+  ...
+  },
+  ...
+  }
+  (6) update angular.json to replace the environment.ts during build and server with file you want to use - https://itnext.io/multi-environment-setup-for-your-angular-app-a211d72f1ff1
+
+  (7) create an alias path to use in code.
+
+- update tsconfig.json, add to the object compilerOptions:
+  "paths": {
+  "@environment": ["./src/environments/environment.ts"]
+  }
+- use the alias in component:
+  // import { environment } from 'src/environments/environment';
+  import { environment } from '@environment'; // nice!
+
 ## Commands
 
 Create project
