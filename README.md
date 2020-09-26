@@ -24,6 +24,12 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
+## Tests helpers
+
+Use unit test helper library `angular-unit-test-helper` to make it easier to mock a component
+npm i -D angular-unit-test-helper
+use: createComponentMock('CurrentWeatherComponent');
+
 ## Tools and Extensions
 
 The npm repository contains numerous usefull and mature CLI commands that are often cross-platform. here are the packages you can install globally for performance reasons.
