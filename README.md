@@ -189,6 +189,12 @@ Run the following commands before committing your code to ensure styles and lint
 npm run style:fix - automatically format code files as per styling rules
 npm run lint:fix - automatically fix auto-fixable linting errors
 
+## Setup CI/CD to AWS S3
+
+### CI - Deploy an Angular 9|8|7 Application Using Github Actions
+
+interesting article: https://www.c-sharpcorner.com/article/deploy-an-angular-89-application-using-github-actions/
+
 ## Commands run during development
 
 npx ng generate component current-weather
