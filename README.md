@@ -193,7 +193,11 @@ npm run lint:fix - automatically fix auto-fixable linting errors
 
 ### CI - Deploy an Angular 9|8|7 Application Using Github Actions
 
-interesting article: https://www.c-sharpcorner.com/article/deploy-an-angular-89-application-using-github-actions/
+interesting articles:
+
+- https://www.c-sharpcorner.com/article/deploy-an-angular-89-application-using-github-actions/
+
+- https://focisolutions.com/2020/04/github-actions-deploying-an-angular-app/
 
 ## Commands run during development
 
