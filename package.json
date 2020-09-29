@@ -8,6 +8,7 @@
     "config": "ts-node ./scripts/setenv.ts",
     "start": "npm run config -- --environment=dev && ng serve -c=dev --port 5000",
     "build": "ng build",
+    "build:prod": "ng build --prod",
     "test": "ng test",
     "lint": "run-p lint:ts lint:tsc",
     "e2e": "ng e2e",
