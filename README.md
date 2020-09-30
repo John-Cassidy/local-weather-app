@@ -40,22 +40,22 @@ rimraf: unix command 'rm -rf' works on Windows too. usefull for deleting the nod
 
 npm-check-updates: npm install -g npm-check-updates
 Analyzes your project folder and reports on which packages have newer versions or not, with the ooption to be able t oupdate all of them if you wish. There is also an exension 'Angular Evergreen' that allows you to run npm-check-updates.
-https://www.npmjs.com/package/npm-check-updates
+<https://www.npmjs.com/package/npm-check-updates>
 
 nvs: install on Windows. Easy tool to switch between versions of Node.
 install using choco: choco install nvs
-https://github.com/jasongin/nvs/blob/master/README.md
+<https://github.com/jasongin/nvs/blob/master/README.md>
 
 http-server: simple command-line HTTP server
 npm install --global http-server
 
 npm-windows-upgrade: allows you to upgrade npm on Windows.
 read instructions on installing as there may be some PowerShell permissions you need to set first!
-https://www.npmjs.com/package/npm-windows-upgrade
+<https://www.npmjs.com/package/npm-windows-upgrade>
 npm install --global --production npm-windows-upgrade
 To upgrade run: npm-windows-upgrade
 
-npkill: easily find and remove old and heavy node_modules folders - https://www.npmjs.com/package/npkill
+npkill: easily find and remove old and heavy node_modules folders - <https://www.npmjs.com/package/npkill>
 npm i -g npkill
 
 AWS CLI:
@@ -127,12 +127,12 @@ I've added a settings.json file in .vscode folder that will allow all developers
 
 If you leverage automated tools, you can quickly configureyour IDE and your Angular porject with dozens of settings that work well together.
 
-mrm-task-angular-vscode: VS Code task - https://www.npmjs.com/package/mrm-task-angular-vscode
+mrm-task-angular-vscode: VS Code task - <https://www.npmjs.com/package/mrm-task-angular-vscode>
 npm i -g mrm-task-angular-vscode
 Apply the Angular VS Code configuration to your project
 npx mrm angular-vscode
 
-mrm-task-npm-docker: the npm Scripts for the Docker task - https://www.npmjs.com/package/mrm-task-npm-docker
+mrm-task-npm-docker: the npm Scripts for the Docker task - <https://www.npmjs.com/package/mrm-task-npm-docker>
 npm i -g mrm-task-npm-docker
 
 Apply the npm Scripts for the Docker configuration to your project
@@ -141,7 +141,7 @@ npx mrm npm-docker
 ## Setup DOTENV to access Envvironment Variables
 
 Keep sensitive environment data out of source control
-https://medium.com/javascript-in-plain-english/setup-dotenv-to-access-environment-variables-in-angular-9-f06c6ffb86c0
+<https://medium.com/javascript-in-plain-english/setup-dotenv-to-access-environment-variables-in-angular-9-f06c6ffb86c0>
 
 (1a) install 2 packages:
 npm install --save-dev yargs dotenv
@@ -167,7 +167,7 @@ npm install --save-dev yargs dotenv
   },
   ...
   }
-  (6) update angular.json to replace the environment.ts during build and server with file you want to use - https://itnext.io/multi-environment-setup-for-your-angular-app-a211d72f1ff1
+  (6) update angular.json to replace the environment.ts during build and server with file you want to use - <https://itnext.io/multi-environment-setup-for-your-angular-app-a211d72f1ff1>
 
   (7) create an alias path to use in code.
 
@@ -195,9 +195,9 @@ npm run lint:fix - automatically fix auto-fixable linting errors
 
 interesting articles:
 
-- https://www.c-sharpcorner.com/article/deploy-an-angular-89-application-using-github-actions/
+- <https://www.c-sharpcorner.com/article/deploy-an-angular-89-application-using-github-actions/>
 
-- https://focisolutions.com/2020/04/github-actions-deploying-an-angular-app/
+- <https://focisolutions.com/2020/04/github-actions-deploying-an-angular-app/>
 
 ## Commands run during development
 
