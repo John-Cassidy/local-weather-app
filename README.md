@@ -208,5 +208,3 @@ npx ng generate component current-weather
 npx ng g i ICurrentWeather interface
 
 npx ng g s weather --flat false
-
-## Update Readme to verify VS Code notifies developer of remote branch update.
