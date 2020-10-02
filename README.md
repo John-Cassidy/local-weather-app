@@ -65,8 +65,14 @@ use choco to install: choco upgrade awscli -y
 
 I've added an extensions.json file in .vscode folder that suggests what exensions to install in VSCode to improve your developlment experience.
 To install these exensions in your project, if they are not already:
+
+npm i -D dev-norms
+npm i -D npm-run-all
+npm i -D open-cli
+npm i -D rimraf
+
 npm i -D prettier tslint-config-prettier tslint-plugin-prettier
-npm i -D js-beutify
+npm i -D js-beautify
 npm i -D import-sort import-sort-cli import-sort-parser-typescript import-sort-style-module
 npm i -D tslint tslint-etc
 
