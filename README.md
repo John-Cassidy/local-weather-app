@@ -209,9 +209,20 @@ interesting articles:
 
 npx ng add @angular/material
 
-- seupt global angular material typography styles? no
+- setup global angular material typography styles? no
 - set up browser animations for angular material? yes
 - choose a custom theme: Indigo/Pink
+
+NOTE: if the major/minor versions of the following packages don't match, you can rerun the following command
+"@angular/cdk": "^10.2.3",
+"@angular/material": "^10.2.3",
+
+npm install @angular/material@10.2.3 @angular/cdk@10.2.3
+
+npx ng g m material --flat -m app
+
+npm i @angular/flex-layout
+NOTE:
 
 ## Commands run during development
 
