@@ -2,8 +2,6 @@ import { TestBed } from '@angular/core/testing';
 import { createComponentMock } from 'angular-unit-test-helper';
 
 import { AppComponent } from './app.component';
-import { WeatherService } from './weather/weather.service';
-import { WeatherServiceFake } from './weather/weather.service.fake';
 
 describe('AppComponent', () => {
   beforeEach(async () => {

@@ -205,6 +205,14 @@ interesting articles:
 
 - <https://focisolutions.com/2020/04/github-actions-deploying-an-angular-app/>
 
+## Angular Material and Flex-Layout
+
+npx ng add @angular/material
+
+- seupt global angular material typography styles? no
+- set up browser animations for angular material? yes
+- choose a custom theme: Indigo/Pink
+
 ## Commands run during development
 
 npx ng generate component current-weather

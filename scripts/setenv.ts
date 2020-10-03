@@ -25,7 +25,7 @@ export const environment = {
 `;
 
 // write the content to the respective file
-writeFile(targetPath, environmentFileContent, function (err) {
+writeFile(targetPath, environmentFileContent, (err) => {
   if (err) {
     console.log(err);
   }
