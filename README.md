@@ -249,3 +249,5 @@ npx ng g i ICurrentWeather interface
 npx ng g s weather --flat false
 
 npx ng g c citySearch -m app --dry-run
+
+npx ng g s postalCode --project=local-weather-app --no-flat --lintFix --dry-run
