@@ -144,6 +144,9 @@ npm i -g mrm-task-npm-docker
 Apply the npm Scripts for the Docker configuration to your project
 npx mrm npm-docker
 
+SubSink, published by Ward Bell, is a straightforward library to keep track of all subscriptions in a given class and allows you to unsubscribe to all of them during ngOnDestroy()
+npm i subsink
+
 ## Setup DOTENV to access Envvironment Variables
 
 Keep sensitive environment data out of source control
@@ -222,7 +225,6 @@ npm install @angular/material@10.2.3 @angular/cdk@10.2.3
 npx ng g m material --flat -m app
 
 npm i @angular/flex-layout
-NOTE:
 
 ## Commands run during development
 
@@ -233,3 +235,5 @@ npx ng generate component current-weather
 npx ng g i ICurrentWeather interface
 
 npx ng g s weather --flat false
+
+npx ng g c citySearch -m app --dry-run
