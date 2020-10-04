@@ -6,13 +6,17 @@ require('dotenv').config();
 const environment = argv.environment;
 const isProduction = environment === 'prod';
 
-if (
-  !process.env.appId ||
-  !process.env.baseUrl ||
-  !process.env.geousername ||
-  !process.env.geonamesApi
-) {
-  console.error('All the required environment variables were not provided!');
+if (!process.env.appId || !process.env.baseUrl) {
+  console.error('All the required weather environment variables were not provided!');
+  process.exit(-1);
+}
+
+if (!process.env.geousername) {
+  console.error('The required geousername environment variable was not provided!');
+  process.exit(-1);
+}
+if (!process.env.geonamesApi) {
+  console.error('The required geonamesApi environment variable was not provided!');
   process.exit(-1);
 }
 
