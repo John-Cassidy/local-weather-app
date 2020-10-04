@@ -12,6 +12,8 @@ jobs:
     env:
       appId: ${{ secrets.APPID }}
       baseUrl: ${{ secrets.BASEURL }}
+      geoUsername: ${{ secrets.GEOUSERNAME }}
+      geonamesApi: ${{ secrets.GEONAMESAPI }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
