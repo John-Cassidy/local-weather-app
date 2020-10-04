@@ -25,7 +25,7 @@ export class CitySearchComponent implements OnInit {
     });
   }
 
-  getErrorMessage() {
+  getErrorMessage(): string {
     return this.search.hasError('minLength')
       ? 'Type more than one character to search'
       : '';

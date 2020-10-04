@@ -1,5 +1,4 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
 import { SubSink } from 'subsink';
 
 import { ICurrentWeather } from '../icurrent-weather.interface';

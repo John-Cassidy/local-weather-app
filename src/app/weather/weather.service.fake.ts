@@ -1,4 +1,4 @@
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 
 import { ICurrentWeather } from '../icurrent-weather.interface';
 import { IWeatherService } from './weather.service';
@@ -13,6 +13,11 @@ export const fakeWeather: ICurrentWeather = {
 };
 
 export class WeatherServiceFake implements IWeatherService {
+  currentSeather$: BehaviorSubject<ICurrentWeather>;
+  getCurrentWeatherByCoords(coords: Coordinates): Observable<ICurrentWeather> {
+    return of(fakeWeather);
+  }
+  updateCurrentWeather(search: string | number, country?: string): void {}
   getCurrentWeather(city: string, country: string): Observable<ICurrentWeather> {
     return of(fakeWeather);
   }
