@@ -11,8 +11,8 @@ if (!process.env.appId || !process.env.baseUrl) {
   process.exit(-1);
 }
 
-if (!process.env.geousername) {
-  console.error('The required geousername environment variable was not provided!');
+if (!process.env.geoUsername) {
+  console.error('The required geoUsername environment variable was not provided!');
   process.exit(-1);
 }
 if (!process.env.geonamesApi) {
@@ -30,7 +30,7 @@ export const environment = {
    production: ${isProduction},
    appId: "${process.env.appId}",
    baseUrl: "${process.env.baseUrl}",
-   geousername: "${process.env.geousername}",
+   geoUsername: "${process.env.geoUsername}",
    geonamesApi: "${process.env.geonamesApi}"
 };
 `;

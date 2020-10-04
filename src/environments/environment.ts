@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   appId: 'PLACEHOLDER',
   baseUrl: 'PLACEHOLDER',
-  geousername: 'PLACEHOLDER',
+  geoUsername: 'PLACEHOLDER',
   geonamesApi: 'PLACEHOLDER',
 };
 

@@ -32,7 +32,7 @@ export class PostalCodeService implements IPostalCodeService {
 
     uriParams = new HttpParams();
     uriParams = uriParams.set('maxRows', '1');
-    uriParams = uriParams.set('username', environment.geousername);
+    uriParams = uriParams.set('username', environment.geoUsername);
     uriParams = uriParams.set('postalcode', postalCode);
 
     if (country) {
