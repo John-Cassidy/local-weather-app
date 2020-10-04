@@ -6,7 +6,12 @@ require('dotenv').config();
 const environment = argv.environment;
 const isProduction = environment === 'prod';
 
-if (!process.env.appId || !process.env.baseUrl) {
+if (
+  !process.env.appId ||
+  !process.env.baseUrl ||
+  !process.env.geousername ||
+  !process.env.geonamesApi
+) {
   console.error('All the required environment variables were not provided!');
   process.exit(-1);
 }
@@ -20,7 +25,9 @@ const environmentFileContent = `
 export const environment = {
    production: ${isProduction},
    appId: "${process.env.appId}",
-   baseUrl: "${process.env.baseUrl}"
+   baseUrl: "${process.env.baseUrl}",
+   geousername: "${process.env.geousername}",
+   geonamesApi: "${process.env.geonamesApi}"
 };
 `;
 
