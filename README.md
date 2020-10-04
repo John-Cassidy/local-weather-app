@@ -32,9 +32,11 @@ use: createComponentMock('CurrentWeatherComponent');
 
 ## Workflow of Pull Request or Merge Request to Github / Bitbucket / Gitlab
 
-Raising and managing Pull Request or PR (as its called in Github and Bitbucket ) or Merge Request or MR (as its called in Gitlab) is probably the most regular part of a Developer’s day to day workflow, when working in a team.
-In this (post)[https://medium.com/@paulrohan/workflow-of-pull-request-or-merge-request-to-github-bitbucket-gitlab-b0942ec5d56e] I shall discuss the steps and workflows and issues you may face while raising your PR for a Repo.
+Raising and managing Pull Request or PR (as its called in Github and Bitbucket ) or Merge Request or MR (as its called in Gitlab)
 
+is probably the most regular part of a Developer’s day to day workflow, when working in a team.
+
+In this [post](https://medium.com/@paulrohan/workflow-of-pull-request-or-merge-request-to-github-bitbucket-gitlab-b0942ec5d56e) I shall discuss the steps and workflows and issues you may face while raising your PR for a Repo.
 
 ## Tools and Extensions
 
@@ -150,6 +152,9 @@ npm i -g mrm-task-npm-docker
 Apply the npm Scripts for the Docker configuration to your project
 npx mrm npm-docker
 
+SubSink, published by Ward Bell, is a straightforward library to keep track of all subscriptions in a given class and allows you to unsubscribe to all of them during ngOnDestroy()
+npm i subsink
+
 ## Setup DOTENV to access Envvironment Variables
 
 Keep sensitive environment data out of source control
@@ -228,7 +233,6 @@ npm install @angular/material@10.2.3 @angular/cdk@10.2.3
 npx ng g m material --flat -m app
 
 npm i @angular/flex-layout
-NOTE:
 
 ## Commands run during development
 
@@ -239,3 +243,5 @@ npx ng generate component current-weather
 npx ng g i ICurrentWeather interface
 
 npx ng g s weather --flat false
+
+npx ng g c citySearch -m app --dry-run
