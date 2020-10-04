@@ -38,6 +38,10 @@ is probably the most regular part of a Developer’s day to day workflow, when w
 
 In this [post](https://medium.com/@paulrohan/workflow-of-pull-request-or-merge-request-to-github-bitbucket-gitlab-b0942ec5d56e) I shall discuss the steps and workflows and issues you may face while raising your PR for a Repo.
 
+Clean up your local branches after merge and delete of remote branch - [post](http://www.fizerkhan.com/blog/posts/Clean-up-your-local-branches-after-merge-and-delete-in-GitHub.html)
+
+git remote prune origin
+
 ## Tools and Extensions
 
 The npm repository contains numerous usefull and mature CLI commands that are often cross-platform. here are the packages you can install globally for performance reasons.
