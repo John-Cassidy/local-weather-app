@@ -32,9 +32,11 @@ use: createComponentMock('CurrentWeatherComponent');
 
 ## Workflow of Pull Request or Merge Request to Github / Bitbucket / Gitlab
 
-Raising and managing Pull Request or PR (as its called in Github and Bitbucket ) or Merge Request or MR (as its called in Gitlab) is probably the most regular part of a Developer’s day to day workflow, when working in a team.
-In this (post)[https://medium.com/@paulrohan/workflow-of-pull-request-or-merge-request-to-github-bitbucket-gitlab-b0942ec5d56e] I shall discuss the steps and workflows and issues you may face while raising your PR for a Repo.
+Raising and managing Pull Request or PR (as its called in Github and Bitbucket ) or Merge Request or MR (as its called in Gitlab)
 
+is probably the most regular part of a Developer’s day to day workflow, when working in a team.
+
+In this [post](https://medium.com/@paulrohan/workflow-of-pull-request-or-merge-request-to-github-bitbucket-gitlab-b0942ec5d56e) I shall discuss the steps and workflows and issues you may face while raising your PR for a Repo.
 
 ## Tools and Extensions
 
