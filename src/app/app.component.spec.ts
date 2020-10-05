@@ -8,7 +8,11 @@ describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [MaterialModule],
-      declarations: [AppComponent, createComponentMock('CurrentWeatherComponent')],
+      declarations: [
+        AppComponent,
+        createComponentMock('CurrentWeatherComponent'),
+        createComponentMock('CitySearchComponent'),
+      ],
     }).compileComponents();
   });
 

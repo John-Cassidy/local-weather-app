@@ -15,7 +15,7 @@ export class CurrentWeatherComponent {
   private subscriptions: SubSink = new SubSink();
 
   constructor(private weatherService: WeatherService) {
-    this.current$ = this.weatherService.currentSeather$;
+    this.current$ = this.weatherService.currentWeather$;
   }
 
   public getOrdinal(date: number): string {

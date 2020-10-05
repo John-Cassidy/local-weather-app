@@ -13,7 +13,7 @@ export const fakeWeather: ICurrentWeather = {
 };
 
 export class WeatherServiceFake implements IWeatherService {
-  currentSeather$: BehaviorSubject<ICurrentWeather>;
+  currentWeather$: BehaviorSubject<ICurrentWeather>;
   getCurrentWeatherByCoords(coords: Coordinates): Observable<ICurrentWeather> {
     return of(fakeWeather);
   }

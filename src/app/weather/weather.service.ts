@@ -8,7 +8,7 @@ import { ICurrentWeather } from '../icurrent-weather.interface';
 import { PostalCodeService } from '../postal-code/postal-code.service';
 
 export interface IWeatherService {
-  readonly currentSeather$: BehaviorSubject<ICurrentWeather>;
+  readonly currentWeather$: BehaviorSubject<ICurrentWeather>;
   getCurrentWeather(search: string, country?: string): Observable<ICurrentWeather>;
   getCurrentWeatherByCoords(coords: Coordinates): Observable<ICurrentWeather>;
   updateCurrentWeather(search: string, country?: string): void;
@@ -42,7 +42,7 @@ export const defaultWeather: ICurrentWeather = {
   providedIn: 'root',
 })
 export class WeatherService implements IWeatherService {
-  readonly currentSeather$: BehaviorSubject<ICurrentWeather> = new BehaviorSubject<
+  readonly currentWeather$: BehaviorSubject<ICurrentWeather> = new BehaviorSubject<
     ICurrentWeather
   >(defaultWeather);
 
@@ -53,7 +53,7 @@ export class WeatherService implements IWeatherService {
 
   updateCurrentWeather(searchText: string, country?: string): void {
     this.getCurrentWeather(searchText, country).subscribe((weather) =>
-      this.currentSeather$.next(weather)
+      this.currentWeather$.next(weather)
     );
   }
 
