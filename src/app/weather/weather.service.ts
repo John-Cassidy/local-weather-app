@@ -12,6 +12,7 @@ export interface IWeatherService {
   getCurrentWeather(search: string, country?: string): Observable<ICurrentWeather>;
   getCurrentWeatherByCoords(coords: Coordinates): Observable<ICurrentWeather>;
   updateCurrentWeather(search: string, country?: string): void;
+  updateCurrentLocalWeather(coord: Coordinates): void;
 }
 interface ICurrentWeatherData {
   weather: [
@@ -53,6 +54,12 @@ export class WeatherService implements IWeatherService {
 
   updateCurrentWeather(searchText: string, country?: string): void {
     this.getCurrentWeather(searchText, country).subscribe((weather) =>
+      this.currentWeather$.next(weather)
+    );
+  }
+
+  updateCurrentLocalWeather(coord: Coordinates): void {
+    this.getCurrentWeatherByCoords(coord).subscribe((weather) =>
       this.currentWeather$.next(weather)
     );
   }

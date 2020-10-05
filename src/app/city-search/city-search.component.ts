@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { debounceTime, filter, tap } from 'rxjs/operators';
 
@@ -9,7 +9,7 @@ import { WeatherService } from '../weather/weather.service';
   templateUrl: './city-search.component.html',
   styleUrls: ['./city-search.component.css'],
 })
-export class CitySearchComponent {
+export class CitySearchComponent implements OnInit {
   public search: FormControl = new FormControl('', [
     Validators.required,
     Validators.minLength(2),
@@ -22,6 +22,15 @@ export class CitySearchComponent {
         tap((searchValue: string) => this.doSearch(searchValue))
       )
       .subscribe();
+  }
+  ngOnInit(): void {
+    navigator.geolocation.getCurrentPosition((position) => {
+      this.weatherService.updateCurrentLocalWeather({
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude,
+      } as Coordinates);
+      console.log('position', position);
+    });
   }
 
   doSearch(searchValue: string): void {
