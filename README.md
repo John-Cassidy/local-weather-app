@@ -167,6 +167,9 @@ Keep sensitive environment data out of source control
 (1a) install 2 packages:
 npm install --save-dev yargs dotenv
 
+(1b) create process.env and .env files
+(1c) add these files to .gitignore
+
 - dotenv
 - yargs
 
