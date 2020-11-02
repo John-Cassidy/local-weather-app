@@ -11,6 +11,7 @@
     "build:prod": "ng build --prod",
     "build:ci": "ng build --prod --sourceMap=false --base-href /local-weather-app/",
     "build:docker": "npm run config -- --environment=prod && ng build --prod",
+    "build:gcloud": "npm run config -- --environment=prod && ng build --prod",
     "test:ci": "ng test --watch=false --code-coverage --source-map true",
     "test": "ng test",
     "lint": "run-p lint:ts lint:tsc",
@@ -21,7 +22,7 @@
     "lint:ts": "tslint --config tslint.json --project . -e \"**/{test,polyfills}.ts\"",
     "lint:ts:fix": "tslint --config tslint.json --fix --project . -e \"**/{test,polyfills}.ts\"",
     "lint:tsc": "tsc --noEmit --skipLibCheck",
-    "predocker:build": "npm run build:docker && ng test -- --watch=false",
+    "predocker:build": "npm run build:docker && ng test --watch=false",
     "docker:build": "cross-conf-env docker image build . -t $npm_package_config_imageRepo:$npm_package_version",
     "postdocker:build": "npm run docker:tag",
     "docker:tag": " cross-conf-env docker image tag $npm_package_config_imageRepo:$npm_package_version $npm_package_config_imageRepo:latest",
@@ -34,7 +35,11 @@
     "docker:taillogs": "echo Web Server Logs: && cross-conf-env docker logs -f $npm_package_config_imageName",
     "docker:open": "sleep 2 && cross-conf-env open-cli http://localhost:$npm_package_config_imagePort",
     "docker:debugmessage": "echo Docker Debug Completed Successfully! Hit Ctrl+C to terminate log tailing.",
-    "docker:debug": "run-s -cs docker:build docker:run docker:open docker:debugmessage docker:taillogs"
+    "docker:debug": "run-s -cs docker:build docker:run docker:open docker:debugmessage docker:taillogs",
+    "gcloud:tag": "docker tag jpcassidy/local-weather gcr.io/local-weather-app-ce379/local-weather-app",
+    "gcloud:push": "docker push gcr.io/local-weather-app-ce379/local-weather-app",
+    "gcloud:build": "gcloud builds submit --tag gcr.io/local-weather-app-ce379/local-weather-app --project local-weather-app-ce379",
+    "gcloud:deploy": "gcloud run deploy --image gcr.io/local-weather-app-ce379/local-weather-app --platform managed --project local-weather-app-ce379 --region us-east1"
   },
   "private": true,
   "dependencies": {

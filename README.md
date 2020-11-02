@@ -254,3 +254,29 @@ npx ng g s weather --flat false
 npx ng g c citySearch -m app --dry-run
 
 npx ng g s postalCode --project=local-weather-app --no-flat --lintFix --dry-run
+
+## setup Dockerfile and repository
+
+use the package.json commands to create the image, container and publish to docker repository
+
+## setup Google Cloud Platform project
+
+install GCloud sdk
+install GCloud extensions
+setup GCloud to run in windows terminal using cmd.exe
+note: you can also run from VS Code terminal:
+
+~ cmd.exe /k "C:\Program Files (x86)\Google\Cloud SDK\cloud_env.bat"
+
+### create the project from gcloud terminal
+
+~ gcloud projects create local-weather-app-ce379 --name=local-weather-app
+Create in progress for [https://cloudresourcemanager.googleapis.com/v1/projects/local-weather-app-ce379].
+Enabling service [cloudapis.googleapis.com] on project [local-weather-app-ce379]...
+Operation finished successfully.
+
+add npm scripts to package.json
+run build/deploy scripts to build/deploy image to Google Container Registry
+
+Service [local-weather-app] revision has been deployed and is serving 100 percent of traffic.
+Service URL: https://local-weather-app-viwleuxpua-ue.a.run.app
