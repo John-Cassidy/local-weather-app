@@ -1,0 +1,45 @@
+name: Deploy the application to Google Cloud Run
+
+on:
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  setup-build-publish-deploy:
+    name: Setup, Build, Publish, and Deploy
+    runs-on: ubuntu-latest
+    env:
+      appId: ${{ secrets.APPID }}
+      baseUrl: ${{ secrets.BASEURL }}
+      geoUsername: ${{ secrets.GEOUSERNAME }}
+      geonamesApi: ${{ secrets.GEONAMESAPI }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      # Setup gcloud CLI
+      - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        with:
+          version: '270.0.0'
+          service_account_key: ${{ secrets.GCLOUD_AUTH }}
+
+      # Configure docker to use the gcloud command-line tool as a credential helper
+      - run: |
+          # Set up docker to authenticate
+          # via gcloud command-line tool.
+          gcloud auth configure-docker
+
+      # Build the Docker image
+      - name: Docker Build and Test
+        run: npm run docker:build
+      # Tag the GCloud image
+      - name: GCloud Tag
+        run: npm run gcloud:tag
+      # Push the Docker image to Google Container Registry
+      - name: Publish
+        run: npm run gcloud:push
+
+      # Deploy the Docker image to the GKE cluster
+      - name: Deploy
+        run: npm run gcloud:deploy
