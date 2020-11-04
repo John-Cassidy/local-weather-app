@@ -39,8 +39,7 @@
     "gcloud:tag": "docker tag jpcassidy/local-weather gcr.io/local-weather-app-ce379/local-weather-app",
     "gcloud:push": "docker push gcr.io/local-weather-app-ce379/local-weather-app",
     "gcloud:build": "gcloud builds submit --tag gcr.io/local-weather-app-ce379/local-weather-app --project local-weather-app-ce379",
-    "gcloud:deploy": "gcloud run deploy --image gcr.io/local-weather-app-ce379/local-weather-app --platform managed --project local-weather-app-ce379 --region us-east1",
-    "gcloud:yamldeploy": "gcloud components install beta && gcloud beta run deploy ${{ secrets.GCLOUD_APP_NAME }} --quiet --image gcr.io/${{ secrets.GCLOUD_PROJECT }}/${{ secrets.GCLOUD_APP_NAME }} --project ${{ secrets.GCLOUD_PROJECT }} --region europe-west1 --platform managed"
+    "gcloud:deploy": "gcloud run deploy --image gcr.io/local-weather-app-ce379/local-weather-app --platform managed --project local-weather-app-ce379 --region us-east1"
   },
   "private": true,
   "dependencies": {
