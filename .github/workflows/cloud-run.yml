@@ -16,7 +16,7 @@ jobs:
       geonamesApi: ${{ secrets.GEONAMESAPI }}
     steps:
       - name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@v2
       - name: Use Node 12.x
         uses: actions/setup-node@v1
         with:
@@ -26,9 +26,10 @@ jobs:
       # Setup gcloud CLI
       - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
         with:
-          version: '270.0.0'
+          version: '290.0.1'
+          project_id: ${{ secrets.GCLOUD_PROJECT }}
           service_account_key: ${{ secrets.GCLOUD_AUTH }}
-
+          export_default_credentials: true
       # Configure docker to use the gcloud command-line tool as a credential helper
       - run: |
           # Set up docker to authenticate
@@ -47,4 +48,4 @@ jobs:
 
       # Deploy the Docker image to the GKE cluster
       - name: Deploy
-        run: gcloud components install beta && gcloud beta run deploy ${{ secrets.GCLOUD_APP_NAME }} --quiet --image gcr.io/${{ secrets.GCLOUD_PROJECT }}/${{ secrets.GCLOUD_APP_NAME }} --project ${{ secrets.GCLOUD_PROJECT }} --region europe-west1 --platform managed
+        run: gcloud run deploy ${{ secrets.GCLOUD_APP_NAME }} --quiet --image gcr.io/local-weather-app-ce379/local-weather-app --platform managed --project local-weather-app-ce379 --region us-east1
