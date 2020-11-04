@@ -22,7 +22,7 @@
     "lint:ts": "tslint --config tslint.json --project . -e \"**/{test,polyfills}.ts\"",
     "lint:ts:fix": "tslint --config tslint.json --fix --project . -e \"**/{test,polyfills}.ts\"",
     "lint:tsc": "tsc --noEmit --skipLibCheck",
-    "predocker:build": "npm run build:docker && ng test --watch=false",
+    "predocker:build": "npm run build:docker",
     "docker:build": "cross-conf-env docker image build . -t $npm_package_config_imageRepo:$npm_package_version",
     "postdocker:build": "npm run docker:tag",
     "docker:tag": " cross-conf-env docker image tag $npm_package_config_imageRepo:$npm_package_version $npm_package_config_imageRepo:latest",
