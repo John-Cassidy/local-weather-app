@@ -9,3 +9,9 @@
     </mat-error>
   </mat-form-field>
 </form>
+<div class="center">
+  <mat-slide-toggle color="accent" [(ngModel)]="useNgRx"
+    (ngModelChange)="doSearch(search.value)" [ngModelOptions]="{standalone: true}">
+    {{useNgRx ? 'Using NgRX' : 'Using BehaviorSubject'}}
+  </mat-slide-toggle>
+</div>

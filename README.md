@@ -280,3 +280,40 @@ run build/deploy scripts to build/deploy image to Google Container Registry
 
 Service [local-weather-app] revision has been deployed and is serving 100 percent of traffic.
 Service URL: https://local-weather-app-viwleuxpua-ue.a.run.app
+
+## NgRx
+
+(Installation Instructions) [https://ngrx.io/guide/store/install]
+
+Command:
+npx ng add @ngrx/store --minimal false
+
+This command will automate the following steps:
+
+Update package.json > dependencies with @ngrx/store.
+Run npm install to install those dependencies.
+Create a src/app/reducers folder, unless the statePath flag is provided, in which case this would be created based on the flag.
+Create a src/app/reducers/index.ts file with an empty State interface, an empty reducers map, and an empty metaReducers array. This may be created under a different directory if the statePath flag is provided.
+Update your src/app/app.module.ts > imports array with StoreModule.forRoot(reducers, { metaReducers }). If you provided flags then the command will attempt to locate and update module found by the flags.
+
+Command:
+npx ng add @ngrx/effects --minimal
+
+This command will add the NgRx effects package.
+
+Command:
+npm i -D @ngrx/schematics
+
+This command will install the NgRx schematics library so you can take advantage of generators to create the boilerplate code for you.
+
+Create an action named search by running the following command:
+
+npx ng generate @ngrx/schematics:action search --group --creators --dry-run
+
+Create an effect to handle the search action and dispatch a weatherLoaded action by running the following command:
+
+npx ng generate @ngrx/schematics:effect currentWeather --module=app.module.ts --root --group --creators
+
+Create a reducer to ingest the current weather information and store it in our appStore state by running the following command:
+
+npx ng generate @ngrx/schematics:reducer search --reducers=reducers/index.ts --group --creators
